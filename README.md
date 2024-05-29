@@ -22,3 +22,26 @@
 - ViewEngine : ExpressJs
 - Errors : err-code
 - VersionControl : Git
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Gowher-Jan-J/Ticket-Booking.git
+   cd Ticket-Booking
+   ```
+
+2. Install the necessary dependencies:
+
+   ```bash
+   npm install
+   ```
+
+## Running the Project
+
+To start the project, run:
+
+```bash
+npm start
+```
