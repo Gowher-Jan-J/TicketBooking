@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "e21392a4-aef7-4243-87d7-fe5ab476450f",
+		"name": "Ticket-Booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26650654",
+		"_collection_link": "https://bold-satellite-593278.postman.co/workspace/SakthiInfoTech~9a5d5612-4c90-4371-92cc-564b71b72ca1/collection/26650654-e21392a4-aef7-4243-87d7-fe5ab476450f?action=share&source=collection_link&creator=26650654"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"kowsi\",\n    \"phone\":\"9080855617\",\n    \"password\":\"kowsi@123\",\n    \"email\":\"kowsi@gmail.com\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/createUser",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "usertoken",
+								"value": "{{userToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/getUser",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"kowsi\",\n    \"password\":\"kowsi@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3006/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book a ticket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "usertoken",
+								"value": "{{userToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event_id\":\"123\",\n    \"number_of_tickets\":\"3\",\n    \"price\":\"100\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3006/book",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Bookings",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "usertoken",
+								"value": "{{userToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3006/bookings",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
